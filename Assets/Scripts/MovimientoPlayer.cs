@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimientoPlayer : MonoBehaviour
 {
-    public float velocidad = 1.0f;
+    public float velocidad = 10.0f;
     private Rigidbody rb;
 
     void Start()
@@ -16,6 +16,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        rb.velocity = (h * Vector3.right + v * Vector3.forward) * velocidad;
+        rb.velocity = (h * Vector3.right + v * Vector3.up) * velocidad;
     }
 }
