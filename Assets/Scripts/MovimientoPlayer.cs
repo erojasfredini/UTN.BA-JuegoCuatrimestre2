@@ -11,11 +11,16 @@ public class MovimientoPlayer : MonoBehaviour
     {
          rb = GetComponent<Rigidbody>();
     }
-
+    private float h;
+    private float v;
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        h = Input.GetAxis("Horizontal");
+        v = Input.GetAxis("Vertical");
+    }
+
+    void FixedUpdate()
+    {
         rb.velocity = (h * Vector3.right + v * Vector3.forward) * velocidad;
     }
 }
