@@ -21,6 +21,9 @@ public class MovimientoPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = (h * Vector3.right + v * Vector3.forward) * velocidad;
+        if (Mathf.Abs(h) > 0.1f)
+            rb.velocity = h * Vector3.right * velocidad;
+        else if (Mathf.Abs(v) > 0.1f)
+            rb.velocity = v * Vector3.forward * velocidad;
     }
 }
