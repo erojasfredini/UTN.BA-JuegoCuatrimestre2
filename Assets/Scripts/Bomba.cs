@@ -10,8 +10,18 @@ public class Bomba : MonoBehaviour
     void Start()
     {
         float timepo = Random.Range(tiempoDetonacionMinimo, tiempoDetonacionMaximo);
-        Debug.Log($"Bomba revienta en {timepo}");
+        //Debug.Log($"Bomba revienta en {timepo}");
         Invoke("Reventar", timepo);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            //Debug.Log("Se hace solido!");
+            var col = GetComponent<SphereCollider>();
+            col.isTrigger = false;
+        }
     }
 
     private void Reventar()
