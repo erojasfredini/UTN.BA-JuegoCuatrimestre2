@@ -7,6 +7,8 @@ public class Bomba : MonoBehaviour
     public float tiempoDetonacionMinimo = 5.0f;
     public float tiempoDetonacionMaximo = 10.0f;
 
+    public AudioClip sonidoExplosion;
+
     void Start()
     {
         float timepo = Random.Range(tiempoDetonacionMinimo, tiempoDetonacionMaximo);
@@ -28,6 +30,9 @@ public class Bomba : MonoBehaviour
     {
         // BOOM
         Debug.Log("BOOM!");
+        var mgr = GameObject.Find("ManagerAudio");
+        var mgrAudio = mgr.GetComponent<ManagerAudio>();
+        mgrAudio.ReproducirSoundFX(sonidoExplosion, transform.position);
         GameObject.Destroy(gameObject);
     }
 
