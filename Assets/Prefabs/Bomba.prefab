@@ -110,4 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiempoDetonacionMinimo: 5
   tiempoDetonacionMaximo: 10
+  minPitch: 0.95
+  maxPitch: 1.1
   sonidoExplosion: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
