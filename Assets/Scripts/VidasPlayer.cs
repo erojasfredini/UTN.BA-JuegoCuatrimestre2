@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class VidasPlayer : MonoBehaviour
 {
+    public GameObject prefabEfectoMuerte;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemigo"))
         {
             GameObject.Destroy(gameObject);
             Debug.Log("Moriste");
-            var mgr = GameObject.Find("ManagerJuego");
+            GameObject mgr = GameObject.Find("ManagerJuego");
             var mgrJuego = mgr.GetComponent<ManagerJuego>();
+
+            GameObject.Instantiate(prefabEfectoMuerte, transform.position, transform.rotation);
+
             mgrJuego.GameOver();
         }
     }

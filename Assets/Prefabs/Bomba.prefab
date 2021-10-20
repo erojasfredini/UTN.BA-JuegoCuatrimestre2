@@ -110,6 +110,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiempoDetonacionMinimo: 5
   tiempoDetonacionMaximo: 10
+  prefabExplosion: {fileID: 7554506947986292890, guid: 38a0b501cf1258c44bcdbec1c53cacc9,
+    type: 3}
+  desplazamientoGrilla: 1
+  radioExplosion: 1
   minPitch: 0.95
   maxPitch: 1.1
   sonidoExplosion: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
