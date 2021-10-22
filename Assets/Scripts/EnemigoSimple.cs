@@ -31,6 +31,15 @@ public class EnemigoSimple : MonoBehaviour
 
         rb.velocity = dir * velocidad;
 
+        // Mirar a donde nos estamos moviendo
+        var vel = rb.velocity;
+        vel.y = 0.0f;
+        if (vel.magnitude > 0.1f)
+        {
+            var dirMov = rb.velocity.normalized;
+            rb.rotation = Quaternion.LookRotation(dirMov, Vector3.up);
+        }
+
         //Debug.Log($"La distancia es {distancia}");
         if (distancia < epsilonDistancia)
         {

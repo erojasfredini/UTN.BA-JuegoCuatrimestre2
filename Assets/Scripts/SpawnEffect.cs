@@ -26,7 +26,7 @@ public class SpawnEffect : MonoBehaviour {
         ps.Play();
 
     }
-	
+
 	void Update ()
     {
         if (timer < spawnEffectTime + pause)
@@ -39,8 +39,9 @@ public class SpawnEffect : MonoBehaviour {
             timer = 0;
         }
 
-
-        _renderer.material.SetFloat(shaderProperty, fadeIn.Evaluate( Mathf.InverseLerp(0, spawnEffectTime, timer)));
-        
+        foreach (var mat in _renderer.materials)
+        {
+            mat.SetFloat(shaderProperty, fadeIn.Evaluate(Mathf.InverseLerp(0, spawnEffectTime, timer)));
+        }
     }
 }
