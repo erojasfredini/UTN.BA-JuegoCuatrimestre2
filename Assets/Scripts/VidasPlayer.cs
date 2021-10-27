@@ -9,14 +9,19 @@ public class VidasPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            GameObject.Destroy(gameObject);
-            Debug.Log("Moriste");
-            GameObject mgr = GameObject.Find("ManagerJuego");
-            var mgrJuego = mgr.GetComponent<ManagerJuego>();
-
-            GameObject.Instantiate(prefabEfectoMuerte, transform.position, transform.rotation);
-
-            mgrJuego.GameOver();
+            Morir();
         }
+    }
+
+    public void Morir()
+    {
+        GameObject.Destroy(gameObject);
+        Debug.Log("Moriste");
+        GameObject mgr = GameObject.Find("ManagerJuego");
+        var mgrJuego = mgr.GetComponent<ManagerJuego>();
+
+        GameObject.Instantiate(prefabEfectoMuerte, transform.position, transform.rotation);
+
+        mgrJuego.GameOver();
     }
 }

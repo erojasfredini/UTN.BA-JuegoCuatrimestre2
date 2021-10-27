@@ -58,8 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27db03caa366a2a48bc33764862e4f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoDetonacionMinimo: 5
-  tiempoDetonacionMaximo: 10
+  tiempoDetonacionMinimo: 2
+  tiempoDetonacionMaximo: 4
   prefabExplosion: {fileID: 7554506947986292890, guid: 38a0b501cf1258c44bcdbec1c53cacc9,
     type: 3}
   desplazamientoGrilla: 1

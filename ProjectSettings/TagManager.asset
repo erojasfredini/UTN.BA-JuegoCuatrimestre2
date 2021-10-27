@@ -5,19 +5,23 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - Bloque
+  - Item
+  - Enemigo
+  - Bomba
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bloques
   - Water
   - UI
-  - 
-  - 
+  - Players
+  - Items
   - Lighting
   - Ground
   - Postprocessing
-  - 
+  - Enemigos
   - 
   - 
   - 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5218690321261117878}
   - component: {fileID: 7750122691211040957}
   - component: {fileID: 978886268511647691}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boost
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -71,6 +71,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 69e570a331da80d4f9bb60a69b974919, type: 3}
       propertyPath: m_Name
       value: Modelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 69e570a331da80d4f9bb60a69b974919, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 69e570a331da80d4f9bb60a69b974919, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69e570a331da80d4f9bb60a69b974919, type: 3}
       propertyPath: m_RootOrder

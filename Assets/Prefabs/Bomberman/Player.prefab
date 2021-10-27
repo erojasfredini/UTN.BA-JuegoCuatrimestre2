@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8765282307179126323}
   - component: {fileID: 1722248269157283061}
   - component: {fileID: 6273899530241105590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Modelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1913879746}
   - component: {fileID: 1913879747}
   - component: {fileID: 2355294379846306351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -217,3 +217,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f02889aa3b7827409610a3aa0a455b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntos: 0

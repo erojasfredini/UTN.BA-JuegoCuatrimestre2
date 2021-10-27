@@ -37,6 +37,7 @@ public class Bomba : MonoBehaviour
         // BOOM
         Debug.Log("BOOM!");
 
+        // Sonido
         float pitch = UnityEngine.Random.Range(minPitch, maxPitch);
         // Alternativa singleton
         //var mgrAudio = MgrAudio.GetInstancia();
@@ -48,20 +49,70 @@ public class Bomba : MonoBehaviour
 
         // Crear explosiones
         GameObject.Instantiate(prefabExplosion, transform.position, Quaternion.identity);
+        ChequeoExplosion(transform.position);
+
         // Vecino Norte
         for (int i=0; i < radioExplosion; ++i)
-            GameObject.Instantiate(prefabExplosion, transform.position + Vector3.forward * desplazamientoGrilla * (i + 1), Quaternion.identity);
+        {
+            Vector3 pos = transform.position + Vector3.forward * desplazamientoGrilla * (i + 1);
+            GameObject.Instantiate(prefabExplosion, pos, Quaternion.identity);
+            ChequeoExplosion(pos);
+        }
+
         // Vecino Sur
         for (int i = 0; i < radioExplosion; ++i)
-            GameObject.Instantiate(prefabExplosion, transform.position - Vector3.forward * desplazamientoGrilla * (i + 1), Quaternion.identity);
+        {
+            Vector3 pos = transform.position - Vector3.forward * desplazamientoGrilla * (i + 1);
+            GameObject.Instantiate(prefabExplosion, pos, Quaternion.identity);
+            ChequeoExplosion(pos);
+        }
+
         // Vecino Oeste
         for (int i = 0; i < radioExplosion; ++i)
-            GameObject.Instantiate(prefabExplosion, transform.position - Vector3.right * desplazamientoGrilla * (i + 1), Quaternion.identity);
+        {
+            Vector3 pos = transform.position - Vector3.right * desplazamientoGrilla * (i + 1);
+            GameObject.Instantiate(prefabExplosion, pos, Quaternion.identity);
+            ChequeoExplosion(pos);
+        }
+
         // Vecino Este
         for (int i = 0; i < radioExplosion; ++i)
-            GameObject.Instantiate(prefabExplosion, transform.position + Vector3.right * desplazamientoGrilla * (i + 1), Quaternion.identity);
+        {
+            Vector3 pos = transform.position + Vector3.right * desplazamientoGrilla * (i + 1);
+            GameObject.Instantiate(prefabExplosion, pos, Quaternion.identity);
+            ChequeoExplosion(pos);
+        }
 
         GameObject.Destroy(gameObject);
+    }
+
+    private void ChequeoExplosion(Vector3 pos)
+    {
+        int layerBloques = 1 << LayerMask.NameToLayer("Bloques");
+        int layerEnemigos = 1 << LayerMask.NameToLayer("Enemigos");
+        int layerPlayers = 1 << LayerMask.NameToLayer("Players");
+        int mascara = layerBloques | layerEnemigos | layerPlayers;
+        Collider[] cosas = Physics.OverlapSphere(pos, desplazamientoGrilla / 3.0f, mascara);
+        foreach (var c in cosas)
+        {
+            var vidasPlayer = c.GetComponent<VidasPlayer>();
+            if (vidasPlayer != null)
+            {
+                vidasPlayer.Morir();
+            }
+            else
+            {
+                var vidasBloque = c.GetComponent<VidasBloque>();
+                if (vidasBloque != null)
+                {
+                    vidasBloque.Dano();
+                }
+                else
+                {
+                    GameObject.Destroy(c.gameObject);
+                }
+            }
+        }
     }
 
 }

@@ -29,7 +29,17 @@ public class EnemigoSimple : MonoBehaviour
         float distancia = dir.magnitude;
         dir.Normalize();
 
-        rb.velocity = dir * velocidad;
+        // Aumenta la velocidad cuando ve al player
+        float velocidadActual = velocidad;
+        Ray rayo = new Ray(transform.position, dir);
+        int layerPlayers = 1 << LayerMask.NameToLayer("Players");
+        int mascara = layerPlayers;
+        if (Physics.Raycast(rayo, mascara))
+        {
+            velocidadActual *= 2.0f;
+        }
+
+        rb.velocity = dir * velocidadActual;
 
         // Mirar a donde nos estamos moviendo
         var vel = rb.velocity;
@@ -53,5 +63,22 @@ public class EnemigoSimple : MonoBehaviour
                 actual = Objetivo.PuntoA;
             }
         }
+
+        //int layerPlayer = 1 << LayerMask.NameToLayer("Players");
+        ////int layerItems = 1 << LayerMask.NameToLayer("Items");
+        ////int mascara = layerPlayer | layerItems;
+        //int mascara = layerPlayer;
+        //float radio = 1.0f;
+        //if (Physics.CheckSphere(transform.position, radio, mascara))
+        //{
+        //    GameObject.Destroy(gameObject);
+        //}
     }
+
+    //private void OnDrawGizmosSelected()
+    //{
+    //    float radio = 1.0f;
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawSphere(transform.position, radio);
+    //}
 }

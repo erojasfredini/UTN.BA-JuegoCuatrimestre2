@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 14382702113596947}
   - component: {fileID: 7058654642570348589}
   - component: {fileID: 8218602487724026468}
-  m_Layer: 0
+  - component: {fileID: -7805026446260038721}
+  m_Layer: 3
   m_Name: BloqueDestruible
   m_TagString: Bloque
   m_Icon: {fileID: 0}
@@ -65,6 +66,19 @@ MonoBehaviour:
   - {fileID: 1245267738586626, guid: b9433f126847af744823ce3e4cad539a, type: 3}
   - {fileID: 1687779245630262, guid: 174fa5bcb7ab0eb4a9478d28ee22658a, type: 3}
   gizmoBloque: {fileID: 4301644267206596656}
+--- !u!114 &-7805026446260038721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435670152473296722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9e1558b77e9644d9b8a70c36defdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoBloque: 0
 --- !u!1001 &4302739948198793142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,9 +86,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 14382702113596947}
     m_Modifications:
+    - target: {fileID: 1153921321446580, guid: 7cf0f33aea1bdd24993c7fe3ef98d94d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1378255503644550, guid: 7cf0f33aea1bdd24993c7fe3ef98d94d, type: 3}
       propertyPath: m_Name
       value: Modelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378255503644550, guid: 7cf0f33aea1bdd24993c7fe3ef98d94d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510600702919246, guid: 7cf0f33aea1bdd24993c7fe3ef98d94d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948360505652510, guid: 7cf0f33aea1bdd24993c7fe3ef98d94d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4366345990270460, guid: 7cf0f33aea1bdd24993c7fe3ef98d94d, type: 3}
       propertyPath: m_RootOrder
