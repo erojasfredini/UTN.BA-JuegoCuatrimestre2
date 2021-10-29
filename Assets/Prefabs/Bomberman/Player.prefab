@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355223868366818408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.133, z: 0.259}
+  m_LocalPosition: {x: 0, y: 0.419, z: 0.259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8042900379781611068}
@@ -103,6 +103,8 @@ GameObject:
   - component: {fileID: 1913879746}
   - component: {fileID: 1913879747}
   - component: {fileID: 2355294379846306351}
+  - component: {fileID: 1466077688}
+  - component: {fileID: 1466077689}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -167,7 +169,7 @@ CapsuleCollider:
   m_Radius: 0.4
   m_Height: 1.14
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.56, z: 0}
 --- !u!81 &1913879748
 AudioListener:
   m_ObjectHideFlags: 0
@@ -190,6 +192,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabBomba: {fileID: 4260496655237329250, guid: 68e528aaac44ed143871aa258f93f113,
     type: 3}
+  prefabBombaArrojadiza: {fileID: 2294851569712320644, guid: 9f9ba0c2adce5f14e800426adc1177a0,
+    type: 3}
+  potenciaDireccion: 2
+  potenciaArriba: 3
   tiempoCoolDown: 1
 --- !u!114 &1913879747
 MonoBehaviour:
@@ -218,3 +224,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntos: 0
+--- !u!195 &1466077688
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8042900379781611046}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1466077689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8042900379781611046}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd41a94ccd8eef4b88839947d945a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
