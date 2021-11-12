@@ -17,6 +17,10 @@ public class EnemigoRastreador : MonoBehaviour
 
     void Update()
     {
+        if (player == null)
+            return;
+        if (agent == null)
+            return;
         agent.SetDestination(player.position);
     }
 }

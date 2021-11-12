@@ -6,6 +6,14 @@ using UnityEngine.SceneManagement;
 public class ManagerJuego : MonoBehaviour
 {
     public float tiempoGameOver = 3.0f;
+    public int cantVidas = 3;
+    public GameObject prefabPlayer;
+    private Transform playerSpawn;
+
+    private void Start()
+    {
+        playerSpawn = GameObject.Find("PlayerSpawn").transform;
+    }
 
     public void GameOver()
     {
@@ -15,6 +23,12 @@ public class ManagerJuego : MonoBehaviour
 
     private void Reiniciar()
     {
-        SceneManager.LoadScene("Juego");
+        --cantVidas;
+        if (cantVidas == 0)
+            SceneManager.LoadScene("Menu");
+        {
+            //SceneManager.LoadScene("Juego");
+            GameObject.Instantiate(prefabPlayer, playerSpawn.position, playerSpawn.rotation);
+        }
     }
 }
