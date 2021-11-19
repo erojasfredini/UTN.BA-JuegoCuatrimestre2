@@ -49,6 +49,7 @@ public class MovimientoPlatformer : MonoBehaviour
         }
 
         float m = Input.GetAxis("Mirar");
+        Debug.Log($"Mirar {m}");
         //Debug.Log($"{m}");
         //Vector3 deltaMousePos = Input.mousePosition - prevMousePos;
         //transform.Rotate(Vector3.up, deltaMousePos.x * Time.deltaTime * velRotacion);
